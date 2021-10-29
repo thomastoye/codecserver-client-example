@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package CodecServer.proto;
+
+import "framing.proto";
+
+message Response {
+  enum Status {
+    OK = 0;
+    ERROR = 1;
+  }
+
+  Status result = 1;
+  string message = 2;
+  FramingHint framing = 3;
+}
